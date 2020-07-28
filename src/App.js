@@ -18,22 +18,22 @@ class App extends React.Component {
 	   		return response.json();
 	  	})
 	  	.then((data) => {
-	  	let mapUsers = new Map();
-	  	data.forEach( user => {
-	  		let date = new Date( user.dob );
-	  		let month = date.getMonth();
-	  		let usersGroup = mapUsers.get(month);
-	  		if (!usersGroup){
-	  			mapUsers.set(month, [user]);
-	  		}
-	  		else {
-	  			usersGroup.push(user);
-	  			mapUsers.set(month, usersGroup);
-	  		}
-		})
+		  	let mapUsers = new Map();
+		  	data.forEach( user => {
+		  		let date = new Date( user.dob );
+		  		let month = date.getMonth();
+		  		let usersGroup = mapUsers.get(month);
+		  		if (!usersGroup){
+		  			mapUsers.set(month, [user]);
+		  		}
+		  		else {
+		  			usersGroup.push(user);
+		  			mapUsers.set(month, usersGroup);
+		  		}
+			})
 
-	  	let usersByMonth = Array.from(mapUsers).sort((a, b) => a[0] > b[0] ? 1 : -1);
-	  	this.setState({ users: usersByMonth});
+	  		let usersByMonth = Array.from(mapUsers).sort((a, b) => a[0] > b[0] ? 1 : -1);
+	  		this.setState({ users: usersByMonth});
 	  	});
 	}
 

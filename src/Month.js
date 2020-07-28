@@ -31,7 +31,7 @@ class Month extends React.Component {
 				onMouseEnter={() => this.setState({ isShown: true })}
         		onMouseLeave={() => this.setState({ isShown: false })}
         	>
-				<h1 className="month" style={{ color: this.getColor(users.length) }}>{ monthes[monthNumber] }</h1>
+			<h1 className="month" style={{ color: this.getColor(users.length) }}>{ monthes[monthNumber] }</h1>
 				<div style={{ display: this.state.isShown ? "block" : "none" }}>
 					{
 						users.map(user => (
