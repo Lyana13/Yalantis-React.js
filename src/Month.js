@@ -44,5 +44,4 @@ class Month extends React.Component {
 	}
 }
 
-
 export default Month;
